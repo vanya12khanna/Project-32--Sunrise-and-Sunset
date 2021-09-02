@@ -42,17 +42,17 @@ function draw(){
 
 async function getBackgroundImg(){
 
-    var response = await fetch("http://worldtimeapi.org/api/timezone/Asia/Tokyo");
+    var response = await fetch("https://worldtimeapi.org/api/timezone/Asia/Kolkata");
     var responseJSON = await response.json();
 
     console.log(responseJSON);
 
     var datetime = responseJSON.datetime;
-    var hour = datetime.slice(11,13);
+    hour = datetime.slice(11,13);
 
     console.log(datetime+"  " +hour);
     
-    if(hour>=04 && hour<06 ){
+    if(hour>=04 && hour<18 ){
         bg = "sunrise.png";
     }
     else{
